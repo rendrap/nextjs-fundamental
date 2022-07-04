@@ -1,11 +1,12 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Home = () => {
   return (
     <div>
       <h2>Hello</h2>
       <p>My name is Rendra</p>
-      <img src="/lazar.png" alt="" />
+      <Image src="/lazar.png" alt="lazar" width={200} height={200} />
 
       <h2>My favourite music genres:</h2>
       <ul>
