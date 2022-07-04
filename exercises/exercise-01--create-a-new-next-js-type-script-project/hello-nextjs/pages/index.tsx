@@ -1,8 +1,20 @@
+import Link from 'next/link'
+
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to the Home page</h1>
-      <a href="/about">About</a>
+      <h2>My favourite music genres:</h2>
+      <ul>
+        <li>
+          <Link href="/rock">Rock</Link>
+        </li>
+        <li>
+          <Link href="/country">Country</Link>
+        </li>
+        <li>
+          <Link href="/pop">Pop</Link>
+        </li>
+      </ul>
     </div>
   )
 }
