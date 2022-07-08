@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChakraProvider, Heading } from '@chakra-ui/react'
 import Button from '../src/components/button/button'
+import { ReactElement } from 'react'
+import Layout from '../src/components/layout'
 
 const TWITTER_IMG =
   'https://pbs.twimg.com/profile_images/917681456884809728/4Riby-G2_400x400.jpg'
@@ -57,4 +59,7 @@ const Home = () => {
   )
 }
 
+Home.getLayout = (page: ReactElement) => {
+  return <Layout>{page}</Layout>
+}
 export default Home
