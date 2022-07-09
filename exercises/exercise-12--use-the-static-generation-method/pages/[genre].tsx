@@ -1,7 +1,26 @@
-const getWeather = async (genre: string) => {
-  const response = await fetch(`/api/weather/${genre}`)
-  const data = await response.json()
-  return data
+import type { GetStaticProps, GetStaticPaths } from 'next'
+
+type Props = {
+  genre: string
 }
 
-export default getWeather
+const Genre = ({ genre }: Props) => {
+  return <p>{genre}</p>
+}
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return {
+    paths: ['rock', 'country', 'pop'].map((genre) => ({ params: { genre } })),
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps<Props> = () => {
+  return {
+    props: {
+      genre: 'rock'
+    }
+  }
+}
+
+export default Genre
