@@ -15,10 +15,18 @@ export const getStaticPaths: GetStaticPaths = () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<Props> = () => {
+export const getStaticProps: GetStaticProps<Props> = (context) => {
+  const genre = context.params?.['genre'] as string
+
+  if (!genre) {
+    return {
+      notFound: true
+    }
+  }
+
   return {
     props: {
-      genre: 'rock'
+      genre
     }
   }
 }
