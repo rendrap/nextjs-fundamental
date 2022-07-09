@@ -28,7 +28,7 @@ export default Home
 export const getStaticProps: GetStaticProps<Props> = () => {
   return {
     props: {
-      genres: ['rock', 'country', 'pop']
+      genres: ['rock', 'country', 'pop', 'indie']
     }
   }
 }

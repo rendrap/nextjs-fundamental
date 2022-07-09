@@ -18,6 +18,8 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps<Props> = (context) => {
   const genre = context.params?.['genre'] as string
 
+  console.log('Fetching data in getStaticProps')
+
   if (!genre) {
     return {
       notFound: true
@@ -27,7 +29,8 @@ export const getStaticProps: GetStaticProps<Props> = (context) => {
   return {
     props: {
       genre
-    }
+    },
+    revalidate: 20
   }
 }
 
